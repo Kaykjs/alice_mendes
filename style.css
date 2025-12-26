@@ -10,7 +10,7 @@ body {
   padding-top: 80px; /* espaço pro header fixo */
 }
 
-/* Header fixo no topo */
+/* ==== Header ==== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -131,7 +131,7 @@ body {
 }
 
 
-/* Hero Section */
+/* ==== Hero e Seções==== */
 .hero {
   background: rgba(247, 246, 238);
   overflow: hidden;
@@ -164,13 +164,13 @@ body {
   position: absolute;
   height: 530px;
   width: 80%;
-  margin-left: 200px;
+  margin-left: 160px;
   background: #B86E4E;
 }
 
 /* Foto da Alice - esquerda */
 .hero-main-photo {
-  width: 47%;
+  width: 50%;
   position: absolute;
 }
 
@@ -265,7 +265,6 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 4px;
   transition: all 0.4s ease;
 }
 
@@ -448,7 +447,7 @@ body {
 
 /* Seção Serviços */
 .services {
-  padding: 120px 20px;
+  padding: 80px 20px;
   text-align: center;
   background: #ffffff;
 }
@@ -478,7 +477,7 @@ body {
   justify-content: center;
   gap: 60px;
   margin-bottom: 80px;
-  flex-wrap: wrap; /* quebra em mobile se precisar */
+  flex-wrap: wrap;
 }
 
 .service-card {
@@ -492,7 +491,6 @@ body {
   display: block;
 }
 
-/* Títulos e textos dos cards */
 .service-card-title {
   font-family: 'Playfair Display', serif;
   font-size: 24px;
@@ -506,7 +504,6 @@ body {
   color: #666;
 }
 
-
 /* Botão Saiba Mais */
 .btn-saiba-mais {
   display: inline-block;
@@ -518,7 +515,6 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 4px;
   transition: all 0.4s ease;
 }
 
@@ -527,34 +523,44 @@ body {
   color: #ffffff;
 }
 
+
 /* Seção CTA + Depoimentos */
 .cta-depoimentos {
   background: #1E403A; /* verde-escuro do template */
   padding: 120px 20px;
   text-align: center;
+  margin-top: 250px;
 }
 
 .cta-title {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
-  color: #ffffff;
-  margin-bottom: 80px;
+  color: #1E403A;
+  position: absolute;
+  margin-left: 35%;
+  margin-top: 40px;
 }
 
 .visita-card {
-  max-width: 420px;
+  width: 800px;
   margin: 0 auto 140px;
-  padding: 60px 40px;
-  background: #ffffff;
-  border-radius: 12px;
+  padding: 40px 40px;
+  background: rgba(247, 246, 238);;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  margin-left: 390px;
+  margin-top: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .visita-title {
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   color: #1E403A;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .visita-info {
@@ -573,7 +579,6 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 4px;
   transition: all 0.4s ease;
   margin-top: 30px;
 }
@@ -588,7 +593,8 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
   color: #B86E4E; /* marrom do template */
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  margin-top: 180px;
 }
 
 .depoimentos-slider {
@@ -597,20 +603,28 @@ body {
   margin: 0 auto;
 }
 
+.depo-slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; /* evita que slides escondidos apareçam */
+}
+
 .depo-slide {
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  color: #ffffff;
+  display: none; /* esconde todos */
+  text-align: center;
+  padding: 20px;
 }
 
 .depo-slide.active {
-  opacity: 1;
+  display: block; /* mostra só o ativo */
 }
 
 .depo-texto {
   font-size: 22px;
   line-height: 1.8;
   font-style: italic;
+  color: #ffffff;
   margin-bottom: 40px;
   max-width: 700px;
   margin-left: auto;
@@ -620,9 +634,10 @@ body {
 .depo-nome {
   font-size: 26px;
   font-weight: 500;
+  color: #ffffff;
 }
 
-/* Setas finas brancas */
+/* Setas */
 .depo-prev, .depo-next {
   position: absolute;
   top: 50%;
@@ -630,15 +645,242 @@ body {
   font-size: 60px;
   color: #ffffff;
   cursor: pointer;
-  user-select: none;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: opacity 0.3s;
-  z-index: 2;
 }
 
 .depo-prev:hover, .depo-next:hover {
   opacity: 1;
 }
 
-.depo-prev { left: -80px; }
-.depo-next { right: -80px; }
+.depo-prev { left: 300px; }
+.depo-next { right: 300px; }
+
+
+/* Seção duas colunas */
+.duas-colunas {
+  padding: 120px 20px;
+  background: #ffffff;
+}
+
+.duas-colunas-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap; /* responsivo em mobile */
+}
+
+/* Coluna esquerda - bloco marrom */
+.col-esquerda {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.bloco-marrom {
+  width: 400px;
+  height: 600px;
+  background: #B86E4E; /* marrom-terroso */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.foto-bloco {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Coluna direita - foto consultoria */
+.col-direita {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.foto-consultoria {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  margin-bottom: 100px;
+}
+
+
+/* Seção Contato */
+.contato {
+  padding: 40px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.contato-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contato-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  color: #1E403A;
+  margin-bottom: 30px;
+}
+
+.contato-info {
+  font-size: 20px;
+  color: #1E403A;
+  margin-bottom: 80px;
+}
+
+/* Formulário */
+.contato-form {
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  flex: 1;
+  position: relative;
+}
+
+.form-group.full {
+  margin-bottom: 40px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background: transparent;
+  font-size: 18px;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.contato-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  outline: none;
+  border-bottom-color: #B86E4E; /* linha marrom no foco */
+}
+
+.contato-form label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  font-size: 18px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Label sobe quando input tem foco ou valor */
+.contato-form input:focus ~ label,
+.contato-form input:valid ~ label,
+.contato-form textarea:focus ~ label,
+.contato-form textarea:valid ~ label {
+  top: -25px;
+  font-size: 14px;
+  color: #B86E4E;
+}
+
+/* Botão Enviar */
+.btn-enviar {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 60px;
+  border: 2px solid #B86E4E;
+  background: transparent;
+  color: #B86E4E;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-enviar:hover {
+  background: #B86E4E;
+  color: #ffffff;
+}
+
+.sobre {
+  background: rgba(247, 246, 238);
+  overflow: hidden;
+  height: 400px;
+  padding-top: 40px;
+}
+
+/* Parte superior: título centralizado */
+.sobre-top {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.sobre-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 500;
+  color: #1E403A; /* verde-escuro elegante */
+  margin-left: 44%;
+}
+
+
+
+
+/* ==== Footer ==== */
+.footer {
+  background: #1E403A;
+  padding: 60px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+  margin-bottom: 30px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 28px;
+  margin: 0 15px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+}
+
+/* Copyright */
+.copyright {
+  font-size: 16px;
+  opacity: 0.8;
+}

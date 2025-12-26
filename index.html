@@ -5,43 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alice Mendes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     
-  <nav class="header">
-  <a href="#" class="logo-container">
-        <svg preserveAspectRatio="xMidYMid meet" data-bbox="42.796 54.231 114.187 87.86" xmlns="http://www.w3.org/2000/svg" viewBox="42.796 54.231 114.187 87.86" height="100" width="100" data-type="color" role="presentation" aria-hidden="true" wixshapeid="ff8f0852538d464a8d0d0ff30f336072.svg">
-    <g fill-rule="evenodd">
-        <path fill="#DCDCC8" d="M118.507 122.61c0 10.76-8.722 19.481-19.481 19.481-10.76 0-19.481-8.722-19.481-19.481 0-10.76 8.722-19.481 19.481-19.481 10.76 0 19.481 8.722 19.481 19.481z" data-color="1"></path>
-        <path fill-rule="nonzero" fill="#B87E58" d="M48.64 94.408v31.277h-5.844V91.23l57.093-36.999 57.094 37v34.453h-5.845V94.408L99.89 61.196 48.64 94.408z" data-color="2"></path>
-    </g>
-</svg>
-      
-      <div class="logo-text">
-        <span class="nome">Alice Mendes</span>
-      </div>
-  </a>  
-
-  <!-- Checkbox invisível que controla o menu -->
-  <input type="checkbox" id="menu-toggle" class="menu-toggle">
-
-  <!-- Hamburger icon -->
-  <label for="menu-toggle" class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-
-  <!-- Menu que aparece -->
-  <ul class="nav-menu">
-    <li><a href="#Página Inicial">Página Inicial</a></li>
-    <li><a href="#Sobre">Sobre</a></li>
-    <li><a href="#Serviços">Serviços</a></li>
-    <li><a href="#Contato">Contato</a></li>
-  </ul>
-</nav>
+<div id="header"></div>
 
 <section class="hero">
   <!-- Parte superior: Título e subtítulo -->
@@ -85,7 +58,7 @@
       dedicação total para tornar sua jornada imobiliária simples e prazerosa. 
       Vamos encontrar juntos o imóvel perfeito para você?
     </p>
-    <a href="#contato" class="btn-saiba-mais">SAIBA MAIS</a>
+    <a href="sobre.html" class="btn-saiba-mais">SAIBA MAIS</a>
   </div>
 </section>
 
@@ -120,7 +93,7 @@
       </div>
     </div>
 
-<!-- Setas de navegação (nova estética) -->
+<!-- Setas de navegação -->
 <div class="prev arrow-left">
   <span class="arrow-line"></span>
   <span class="arrow-head"></span>
@@ -140,10 +113,66 @@
 </section>
 
 
+<!-- SEÇÃO SERVIÇOS -->
+<section class="services">
+  <div class="services-container">
+    <h2 class="services-title">Serviços</h2>
+    <p class="services-subtitle">Experiência e Confiança</p>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <svg preserveAspectRatio="xMidYMid meet" data-bbox="38 35 125 130" xmlns="http://www.w3.org/2000/svg" viewBox="38 35 125 130" height="150" width="150" data-type="color" role="presentation" aria-hidden="true" wixshapeid="9fe0e5f712544a0a8e24bacec2be3872.svg">
+        <g fill-rule="evenodd">
+        <path fill="#EAEAD9" d="M163 52c0 9.389-7.387 17-16.5 17S130 61.389 130 52s7.387-17 16.5-17S163 42.611 163 52z" data-color="1"></path>
+        <path fill-rule="nonzero" fill="#B87E58" d="M78.751 165H38v-4.852h35.95v-36.394h42.378V91H163v4.852h-41.871v32.755H78.75V165z" data-color="2"></path>
+        </g>
+        </svg>
+        <h3 class="service-card-title">Planejamento de Investimento</h3>
+        <p class="service-card-text">
+          Análise detalhada do mercado e estratégias personalizadas para maximizar o retorno do seu investimento imobiliário.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <svg preserveAspectRatio="xMidYMid meet" data-bbox="38 43 124.236 113.822" xmlns="http://www.w3.org/2000/svg" viewBox="38 43 124.236 113.822" height="150" width="150" data-type="color" role="presentation" aria-hidden="true" wixshapeid="c29f30c356614b7bb179ceac4a1e12a2.svg">
+        <g fill-rule="evenodd">
+        <path fill-rule="nonzero" fill="#B87E58" d="M43.208 90.118v65.402H38V87.958L83.035 43l3.68 3.686-43.507 43.432z" data-color="1"></path>
+        <path fill-rule="nonzero" fill="#B87E58" d="M157.028 90.118v65.402h5.208V87.958L117.201 43l-3.68 3.686 43.507 43.432z" data-color="1"></path>
+        <path fill="#EAEAD9" d="M118.729 138.593c0 10.068-8.161 18.229-18.229 18.229s-18.229-8.161-18.229-18.229 8.161-18.229 18.229-18.229 18.229 8.161 18.229 18.229z" data-color="2"></path>
+        </g>
+        </svg>
+        <h3 class="service-card-title">Orientação Imobiliária</h3>
+        <p class="service-card-text">
+          Acompanhamento completo em todas as etapas da compra, venda ou locação do seu imóvel.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <svg preserveAspectRatio="xMidYMid meet" data-bbox="26 47.01 143 111.294" xmlns="http://www.w3.org/2000/svg" viewBox="26 47.01 143 111.294" height="150" width="150" data-type="color" role="presentation" aria-hidden="true" wixshapeid="55e98e7ca98946e68452766c5e0ca60d.svg">
+        <g fill-rule="evenodd">
+        <path fill="#EAEAD9" d="M51.606 105.393c5.858 5.858 5.858 15.356 0 21.213-5.858 5.858-15.355 5.858-21.213 0-5.858-5.857-5.858-15.355 0-21.213 5.858-5.858 15.355-5.858 21.213 0z" data-color="1"></path>
+        <path fill="#EAEAD9" d="M164.606 75.393c5.858 5.858 5.858 15.356 0 21.214-5.858 5.857-15.355 5.857-21.213 0-5.858-5.858-5.858-15.356 0-21.214 5.858-5.857 15.355-5.857 21.213 0z" data-color="1"></path>
+        <path fill-rule="nonzero" fill="#B87E58" d="M69.367 158.304l-3.737-2.076L126.325 47.01l3.737 2.079-60.695 109.214z" data-color="2"></path>
+        </g>
+        </svg>
+        <h3 class="service-card-title">Avaliação de Imóvel</h3>
+        <p class="service-card-text">
+          Avaliação precisa e profissional do valor de mercado do seu imóvel com laudo detalhado.
+        </p>
+      </div>
+    </div>
+
+    <!-- Botão Saiba Mais -->
+    <a href="saiba-mais.html" class="btn-saiba-mais">SAIBA MAIS</a>
+  </div>
+</section>
+
 
 <!-- SEÇÃO ALCANCE + DEPOIMENTOS -->
-<section class="cta-depoimentos">
-  <div class="cta-container">
+<div class="cta-container">
     <h2 class="cta-title">Alcance Seus Objetivos</h2>
 
     <div class="visita-card">
@@ -154,41 +183,100 @@
     </div>
   </div>
 
+<section class="cta-depoimentos">
+  
   <div class="depoimentos-container">
     <h2 class="depoimentos-title">Depoimentos</h2>
 
-    <div class="depoimentos-slider">
-      <!-- Depoimento 1 -->
-      <div class="depo-slide active">
-        <p class="depo-texto">
-          "Sou um depoimento. Clique para adicionar um texto sobre você e seus serviços. 
-          Deixe que seus clientes recomendem você e seus serviços e digam o quão profissional você é."
-        </p>
-        <h4 class="depo-nome">Carolina Lopes</h4>
-      </div>
+  <div class="depo-slider">
+  <div class="depo-slide active">
+    <p class="depo-texto">"Sou um depoimento. Clique para adicionar um texto sobre você e seus serviços. Deixe que seus clientes recomendem seus serviços e digam o quão profissional você é."</p>
+    <p class="depo-nome">Daniel Melo</p>
+  </div>
 
-      <!-- Depoimento 2 -->
-      <div class="depo-slide">
-        <p class="depo-texto">
-          "Excelente atendimento e profissionalismo. Encontrei o imóvel perfeito graças à Alice!"
-        </p>
-        <h4 class="depo-nome">João Silva</h4>
-      </div>
+  <div class="depo-slide">
+    <p class="depo-texto">"Sou um depoimento. Clique para adicionar um texto sobre você e seus serviços. Deixe que seus clientes recomendem seus serviços e digam o quão profissional você é."</p>
+    <p class="depo-nome">João Silva</p>
+  </div>
 
-      <!-- Depoimento 3 -->
-      <div class="depo-slide">
-        <p class="depo-texto">
-          "Recomendo sem dúvidas. Atenção aos detalhes e resultado acima das expectativas."
-        </p>
-        <h4 class="depo-nome">Maria Oliveira</h4>
-      </div>
+  <div class="depo-slide">
+    <p class="depo-texto">"Sou um depoimento. Clique para adicionar um texto sobre você e seus serviços. Deixe que seus clientes recomendem seus serviços e digam o quão profissional você é."</p>
+    <p class="depo-nome">Maria Oliveira</p>
+  </div>
 
-      <!-- Setas finas -->
-      <div class="depo-prev">←</div>
-      <div class="depo-next">→</div>
+  <div class="depo-prev">←</div>
+  <div class="depo-next">→</div>
+
+</div>
+</section>
+
+<!-- SEÇÃO COM DUAS COLUNAS: BLOCO MARROM + FOTO CONSULTORIA -->
+<section class="duas-colunas">
+  <div class="duas-colunas-container">
+    <!-- Coluna esquerda: bloco marrom com foto dentro -->
+    <div class="col-esquerda">
+      <div class="bloco-marrom">
+        <img src="imagens/coqueiro.avif" alt="Imóvel de luxo com palmeira" class="foto-bloco">
+      </div>
+    </div>
+
+    <!-- Coluna direita: foto de consultoria -->
+    <div class="col-direita">
+      <img src="imagens/alice_com_cliente.avif" alt="Consultoria imobiliária com cliente" class="foto-consultoria">
     </div>
   </div>
 </section>
+
+
+<!-- SEÇÃO FALE COMIGO - FORMULÁRIO -->
+<section class="contato" id="contato">
+  <div class="contato-container">
+    <h2 class="contato-title">Fale Comigo</h2>
+
+    <p class="contato-info">
+      Email: info@meusite.com / Tel: (11) 3456-7890
+    </p>
+
+    <form class="contato-form">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="nome" name="nome" required>
+          <label for="nome">Nome</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="sobrenome" name="sobrenome" required>
+          <label for="sobrenome">Sobrenome</label>
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <input type="email" id="email" name="email" required>
+        <label for="email">Email</label>
+      </div>
+
+      <div class="form-group full">
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        <label for="mensagem">Digite sua mensagem aqui...</label>
+      </div>
+
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+// Carrega header e footer automaticamente
+fetch('includes/header.html')
+  .then(response => response.text())
+  .then(data => document.getElementById('header').innerHTML = data);
+
+fetch('includes/footer.html')
+  .then(response => response.text())
+  .then(data => document.getElementById('footer').innerHTML = data);
+</script>
 
 <script src="slider.js"></script>
 </body>

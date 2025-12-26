@@ -69,23 +69,69 @@ setInterval(() => {
 
 
 // Slider de depoimentos
-let depoAtual = 0;
-const depoimentos = document.querySelectorAll(".depoimento-slide");
+let depoIndex = 0;
+const depoSlides = document.querySelectorAll(".depo-slide");
 
-function showDepo(index) {
-  depoimentos.forEach(depo => depo.classList.remove("active"));
-  depoimentos[index].classList.add("active");
+function mostrarDepo(i) {
+  depoSlides.forEach(s => s.classList.remove("active"));
+  depoSlides[i].classList.add("active");
 }
 
-document.querySelector(".prev-depo").addEventListener("click", () => {
-  depoAtual = (depoAtual - 1 + depoimentos.length) % depoimentos.length;
-  showDepo(depoAtual);
+document.querySelector(".depo-prev").addEventListener("click", () => {
+  depoIndex = (depoIndex - 1 + depoSlides.length) % depoSlides.length;
+  mostrarDepo(depoIndex);
 });
 
-document.querySelector(".next-depo").addEventListener("click", () => {
-  depoAtual = (depoAtual + 1) % depoimentos.length;
-  showDepo(depoAtual);
+document.querySelector(".depo-next").addEventListener("click", () => {
+  depoIndex = (depoIndex + 1) % depoSlides.length;
+  mostrarDepo(depoIndex);
 });
 
-// Mostra o primeiro depoimento
-showDepo(depoAtual);
+
+
+
+// js/main.js - Todos os scripts do site em um arquivo só (organizado e seguro)
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ====================
+  // 1. FECHA O MENU HAMBURGER AO CLICAR EM LINKS
+  // ====================
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuLinks = document.querySelectorAll('.nav-menu a');
+
+  if (menuToggle && menuLinks.length > 0) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.checked = false;
+      });
+    });
+  }
+
+  // ====================
+  // 2. SLIDER AUTOMÁTICO (se você estiver usando o primary-slider)
+  // ====================
+  const primarySlides = document.querySelectorAll('.primary-slide');
+  if (primarySlides.length > 0) {
+    let indiceAtual = 0;
+    const totalSlides = primarySlides.length;
+
+    function proximoSlide() {
+      primarySlides[indiceAtual].classList.remove('active');
+      indiceAtual = (indiceAtual + 1) % totalSlides;
+      primarySlides[indiceAtual].classList.add('active');
+    }
+
+    // Troca a cada 8 segundos
+    setInterval(proximoSlide, 8000);
+
+    // Garante o primeiro slide ativo
+    primarySlides[indiceAtual].classList.add('active');
+  }
+
+  // ====================
+  // 3. OUTROS SCRIPTS FUTUROS (depoimentos, etc.)
+  // ====================
+  // Adicione aqui outros códigos no futuro, sempre dentro do DOMContentLoaded
+
+});
