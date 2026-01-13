@@ -12,6 +12,46 @@
       </div>
   </a>  
 
+  <!-- Ícone de usuário -->
+  <a href="#" class="user-icon">
+   <i class="fas fa-user"></i>
+  </a>
+
+  <!-- Modal de Login -->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <!-- Botão fechar -->
+    <button class="modal-close" id="closeModal">&times;</button>
+    
+    <!-- Título -->
+    <h2 class="modal-title">Login</h2>
+    
+    <!-- Formulário -->
+    <form class="login-form" id="loginForm">
+      <!-- Campo Usuário -->
+      <div class="form-input-group">
+        <i class="fas fa-user input-icon"></i>
+        <input type="text" id="username" placeholder="Usuário" required>
+      </div>
+      
+      <!-- Campo Senha -->
+      <div class="form-input-group">
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" id="password" placeholder="Senha" required>
+      </div>
+      
+      <!-- Link Esqueci a senha -->
+      <a href="#" class="forgot-password">Esqueci minha senha</a>
+      
+      <!-- Botão Entrar -->
+      <button type="submit" class="btn-login">Entrar</button>
+      
+      <!-- Link Criar conta -->
+      <p class="signup-link">Não tem uma conta? <a href="#">Criar conta</a></p>
+    </form>
+  </div>
+</div>
+
   <!-- Checkbox invisível que controla o menu -->
   <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
@@ -29,4 +69,22 @@
     <li><a href="serviços.html">Serviços</a></li>
     <li><a href="index.html#contato">Contato</a></li>
   </ul>
+
+
+  <script>
+     // Carrega header e footer automaticamente
+ fetch('includes/header.html')
+   .then(response => response.text())
+   .then(data => {
+     document.getElementById('header').innerHTML = data;
+     // ADICIONE ESTA LINHA AQUI ↓
+     inicializarModal();
+   });
+
+ fetch('includes/footer.html')
+   .then(response => response.text())
+   .then(data => document.getElementById('footer').innerHTML = data);
+ </script>
+
+  <script src="main.js"></script>
 </nav>

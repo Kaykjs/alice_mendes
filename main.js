@@ -262,3 +262,160 @@ if (document.getElementById('calendario-dias')) {
   }, 100);
 
 }
+
+
+// MODAL DE LOGIN COM VALIDAÇÃO - CORRIGIDO
+
+function inicializarModal() {
+  const userIcon = document.querySelector('.user-icon');
+  const loginModal = document.getElementById('loginModal');
+  const closeModal = document.getElementById('closeModal');
+  const loginForm = document.getElementById('loginForm');
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
+
+  // Verifica se os elementos existem
+  if (!userIcon || !loginModal) {
+    console.log('Aguardando elementos do modal...');
+    return;
+  }
+
+  // Abre o modal ao clicar no ícone de usuário
+  userIcon.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation(); // Impede propagação do evento
+    loginModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    console.log('Modal aberto');
+  });
+
+  // Fecha o modal ao clicar no X
+  if (closeModal) {
+    closeModal.addEventListener('click', () => {
+      fecharModal();
+    });
+  }
+
+  // Fecha o modal ao clicar fora dele
+  loginModal.addEventListener('click', (e) => {
+    if (e.target === loginModal) {
+      fecharModal();
+    }
+  });
+
+  // Fecha com tecla ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && loginModal.classList.contains('active')) {
+      fecharModal();
+    }
+  });
+
+  // Função para fechar modal
+  function fecharModal() {
+    loginModal.classList.remove('active');
+    document.body.style.overflow = '';
+    limparErros();
+    if (loginForm) loginForm.reset();
+  }
+
+  // Função para mostrar erro
+  function mostrarErro(input, mensagem) {
+    limparErro(input);
+    input.classList.add('input-error');
+    const erro = document.createElement('span');
+    erro.className = 'error-message';
+    erro.textContent = mensagem;
+    input.parentElement.insertAdjacentElement('afterend', erro);
+  }
+
+  // Função para limpar erro de um input específico
+  function limparErro(input) {
+    input.classList.remove('input-error');
+    const erro = input.parentElement.nextElementSibling;
+    if (erro && erro.classList.contains('error-message')) {
+      erro.remove();
+    }
+  }
+
+  // Função para limpar todos os erros
+  function limparErros() {
+    const erros = document.querySelectorAll('.error-message');
+    erros.forEach(erro => erro.remove());
+    const inputsComErro = document.querySelectorAll('.input-error');
+    inputsComErro.forEach(input => input.classList.remove('input-error'));
+  }
+
+  // Validação em tempo real
+  if (usernameInput) {
+    usernameInput.addEventListener('input', () => {
+      if (usernameInput.classList.contains('input-error')) {
+        limparErro(usernameInput);
+      }
+    });
+  }
+
+  if (passwordInput) {
+    passwordInput.addEventListener('input', () => {
+      if (passwordInput.classList.contains('input-error')) {
+        limparErro(passwordInput);
+      }
+    });
+  }
+
+  // Validação do formulário
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      limparErros();
+      
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+      let isValid = true;
+      
+      if (username === '') {
+        mostrarErro(usernameInput, 'Por favor, insira seu usuário');
+        isValid = false;
+      } else if (username.length < 3) {
+        mostrarErro(usernameInput, 'O usuário deve ter pelo menos 3 caracteres');
+        isValid = false;
+      }
+      
+      if (password === '') {
+        mostrarErro(passwordInput, 'Por favor, insira sua senha');
+        isValid = false;
+      } else if (password.length < 6) {
+        mostrarErro(passwordInput, 'A senha deve ter pelo menos 6 caracteres');
+        isValid = false;
+      }
+      
+      if (!isValid) return;
+      
+      const usuariosValidos = [
+        { username: 'admin', password: '123456' },
+        { username: 'alice', password: 'alice123' },
+        { username: 'demo', password: 'demo123' }
+      ];
+      
+      const usuarioEncontrado = usuariosValidos.find(
+        user => user.username === username && user.password === password
+      );
+      
+      if (usuarioEncontrado) {
+        alert(`Bem-vindo(a), ${username}! Login realizado com sucesso.`);
+        fecharModal();
+      } else {
+        mostrarErro(passwordInput, 'Usuário ou senha incorretos');
+        passwordInput.value = '';
+      }
+    });
+  }
+}
+
+// Tenta inicializar quando o DOM carregar
+document.addEventListener('DOMContentLoaded', () => {
+  // Aguarda um pouco para garantir que o header foi carregado
+  setTimeout(inicializarModal, 100);
+});
+
+// Também tenta inicializar após carregamento completo da página
+window.addEventListener('load', inicializarModal);
